@@ -38,10 +38,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cylqm"]
-size = Vector2(172, 27)
+size = Vector2(172, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc0nv"]
-size = Vector2(202, 92)
+size = Vector2(202, 87)
 
 [node name="BlueDoor Top" type="StaticBody2D"]
 y_sort_enabled = true
@@ -53,12 +53,12 @@ animation = &"open_door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-5, -21.5)
+position = Vector2(-5, -19)
 shape = SubResource("RectangleShape2D_cylqm")
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_xj7r1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
-position = Vector2(-5, 8)
+position = Vector2(-5, 10.5)
 shape = SubResource("RectangleShape2D_mc0nv")
 debug_color = Color(0.318555, 0.55125, 0.793183, 0.42)
