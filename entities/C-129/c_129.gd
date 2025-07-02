@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 200
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var state_machine =  animation_tree.get("parameters/playback")
@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
 	
-	print(direction)
+	#print(direction)
 	velocity = direction * move_speed
 	
 	move_and_slide()

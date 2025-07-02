@@ -5,16 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://dniavlm46jxve" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
 
 [node name="MainGame" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_1oj5k")
 
 [node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
+y_sort_enabled = true
+position = Vector2(14, 100)
 
 [node name="C-129" parent="." instance=ExtResource("2_yx7mw")]
+position = Vector2(157, 29)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="C-129"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(171, 168)
+position = Vector2(157, 29)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
