@@ -18,3 +18,5 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2(171, 168)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
