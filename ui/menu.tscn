@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://db5qgnkai0ahp"]
+[gd_scene load_steps=3 format=3 uid="uid://bq363gaklhrbf"]
 
-[ext_resource type="Script" uid="uid://deydl33ff8fhv" path="res://ui/menu.gd" id="1_bwjgb"]
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_bwjgb"]
 [ext_resource type="FontFile" uid="uid://d3rfcsp0iyni4" path="res://fonts/Bring Race.otf" id="2_udkah"]
 
 [node name="Menu" type="Control"]

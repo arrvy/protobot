@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn5pod7x8vn35"]
+[gd_scene load_steps=9 format=3 uid="uid://bn5pod7x8vn35"]
 
 [ext_resource type="Texture2D" uid="uid://ddg5pejq1vfx7" path="res://assets/tiles_laboratory_LandOfPixels/tilesStuff.png" id="1_cylqm"]
+[ext_resource type="Script" uid="uid://nelno6wriu6o" path="res://entities/door top/blue_door_top.gd" id="1_yht54"]
+[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="3_xj7r1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbsf8"]
 atlas = ExtResource("1_cylqm")
@@ -19,7 +21,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yht54")
 }],
-"loop": true,
+"loop": false,
 "name": &"close_door",
 "speed": 2.0
 }, {
@@ -30,7 +32,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kbsf8")
 }],
-"loop": true,
+"loop": false,
 "name": &"open_door",
 "speed": 5.0
 }]
@@ -38,15 +40,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cylqm"]
 size = Vector2(172, 35)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc0nv"]
+size = Vector2(160, 114)
+
 [node name="BlueDoor Top" type="StaticBody2D"]
 y_sort_enabled = true
+script = ExtResource("1_yht54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xj7r1")
-animation = &"open_door"
+animation = &"close_door"
 autoplay = "open_door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
 position = Vector2(-5, -25.5)
 shape = SubResource("RectangleShape2D_cylqm")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_xj7r1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(-5, -3)
+shape = SubResource("RectangleShape2D_mc0nv")
+debug_color = Color(0.318555, 0.55125, 0.793183, 0.42)
