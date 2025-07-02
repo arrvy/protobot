@@ -15,10 +15,10 @@ region = Rect2(294, 132, 222, 95)
 [sub_resource type="SpriteFrames" id="SpriteFrames_xj7r1"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_kbsf8")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_yht54")
 }],
 "loop": false,
@@ -38,10 +38,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cylqm"]
-size = Vector2(172, 35)
+size = Vector2(172, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc0nv"]
-size = Vector2(160, 114)
+size = Vector2(202, 92)
 
 [node name="BlueDoor Top" type="StaticBody2D"]
 y_sort_enabled = true
@@ -49,17 +49,16 @@ script = ExtResource("1_yht54")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xj7r1")
-animation = &"close_door"
-autoplay = "open_door"
+animation = &"open_door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-5, -25.5)
+position = Vector2(-5, -21.5)
 shape = SubResource("RectangleShape2D_cylqm")
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_xj7r1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
-position = Vector2(-5, -3)
+position = Vector2(-5, 8)
 shape = SubResource("RectangleShape2D_mc0nv")
 debug_color = Color(0.318555, 0.55125, 0.793183, 0.42)
