@@ -13,13 +13,13 @@ y_sort_enabled = true
 position = Vector2(14, 100)
 
 [node name="C-129" parent="." instance=ExtResource("2_yx7mw")]
-position = Vector2(90, -953)
+position = Vector2(209, -502)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="C-129"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(90, -953)
+position = Vector2(209, -502)
 zoom = Vector2(2, 2)
 limit_left = -10000
 limit_right = 10000

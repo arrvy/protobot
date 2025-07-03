@@ -12,6 +12,3 @@ void fragment() {
     vec4 tex_color = texture(TEXTURE, UV);
     COLOR = vec4(tex_color.rgb, tex_color.a * alpha);
 }
-
-
-
