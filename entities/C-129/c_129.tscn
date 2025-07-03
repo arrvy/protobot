@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_5p2oj"]
 [ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="1_ev8ar"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p2oj"]
-size = Vector2(27, 65)
-
 [sub_resource type="Animation" id="Animation_nshw7"]
 length = 0.001
 tracks/0/type = "value"
@@ -249,23 +246,22 @@ states/walk/position = Vector2(618, 99)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o5heb"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_fi5ks"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_8dhy0")]
 graph_offset = Vector2(-46, -3)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5p2oj"]
+radius = 13.0
+height = 64.0
+
 [node name="C-129" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(171, 168)
 collision_layer = 2
 script = ExtResource("1_5p2oj")
+move_speed = 150.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("1_ev8ar")
 hframes = 10
 vframes = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_as_relative = false
-y_sort_enabled = true
-position = Vector2(-2.5, 15)
-shape = SubResource("RectangleShape2D_5p2oj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -278,3 +274,7 @@ tree_root = SubResource("AnimationNodeStateMachine_k23ac")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/blend_position = Vector2(0.996661, 0.021978)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 16)
+shape = SubResource("CapsuleShape2D_5p2oj")
