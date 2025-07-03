@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dniavlm46jxve"]
+[gd_scene load_steps=25 format=3 uid="uid://dniavlm46jxve"]
 
 [ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_5p2oj"]
 [ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="1_ev8ar"]
@@ -233,22 +233,22 @@ blend_mode = 1
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fi5ks"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8dhy0"]
-advance_mode = 0
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k23ac"]
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_wixe1")
-states/idle/position = Vector2(396, 100)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_a7hx7")
-states/walk/position = Vector2(618, 99)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o5heb"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_fi5ks"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_8dhy0")]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_wixe1")
+states/Idle/position = Vector2(396, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_a7hx7")
+states/Walk/position = Vector2(618, 99)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o5heb"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_fi5ks"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_8dhy0")]
 graph_offset = Vector2(-46, -3)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5p2oj"]
-radius = 13.0
-height = 64.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gweuw"]
+size = Vector2(42, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p2oj"]
+size = Vector2(24.7188, 15.3125)
 
 [node name="C-129" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -272,9 +272,16 @@ autoplay = "idle_right"
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_k23ac")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(0.996661, 0.021978)
-parameters/walk/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0.996661, 0.021978)
+parameters/Walk/blend_position = Vector2(-0.00332373, 1.08162)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 16)
-shape = SubResource("CapsuleShape2D_5p2oj")
+position = Vector2(-1, 40)
+shape = SubResource("RectangleShape2D_gweuw")
+
+[node name="PushDirection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDirection"]
+position = Vector2(-1, 40)
+shape = SubResource("RectangleShape2D_5p2oj")
+debug_color = Color(1, 0.00676037, 0.0529761, 0.42)
