@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d3rfcsp0iyni4"
-path="res://.godot/imported/Bring Race.otf-e8a9369709ce826ed774e4c22b596123.fontdata"
+uid="uid://c1ex11i6wcdkd"
+path="res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata"
 
 [deps]
 
-source_file="res://fonts/Bring Race.otf"
-dest_files=["res://.godot/imported/Bring Race.otf-e8a9369709ce826ed774e4c22b596123.fontdata"]
+source_file="res://assets/fonts/PixelOperator8.ttf"
+dest_files=["res://.godot/imported/PixelOperator8.ttf-6f9f01766aff16f52046b880ffb8d367.fontdata"]
 
 [params]
 

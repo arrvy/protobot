@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvaii4ntc8gll"]
+
+[ext_resource type="Script" uid="uid://sq1bmu8o3dv2" path="res://entities/Pin Input/pin_input.gd" id="1_gsj5o"]
+[ext_resource type="Texture2D" uid="uid://ddg5pejq1vfx7" path="res://assets/tiles_laboratory_LandOfPixels/tilesStuff.png" id="1_ljtv0"]
+[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="2_gsj5o"]
+[ext_resource type="FontFile" uid="uid://c1ex11i6wcdkd" path="res://assets/fonts/PixelOperator8.ttf" id="3_cmei1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_204j0"]
+size = Vector2(18, 57)
+
+[sub_resource type="Animation" id="Animation_204j0"]
+resource_name = "player approach"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vqb45"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_alx4t"]
+resource_name = "player away"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dehsm"]
+_data = {
+&"RESET": SubResource("Animation_vqb45"),
+&"player approach": SubResource("Animation_204j0"),
+&"player away": SubResource("Animation_alx4t")
+}
+
+[node name="Pin Input" type="StaticBody2D"]
+script = ExtResource("1_gsj5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ljtv0")
+region_enabled = true
+region_rect = Rect2(969.603, 195.958, 18.4149, 24.0981)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 20.0
+offset_top = -28.0
+offset_right = 230.0
+offset_bottom = 12.0
+scale = Vector2(1, 0.950465)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.478431)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("3_cmei1")
+theme_override_font_sizes/font_size = 8
+text = "click 'e'"
+
+[node name="InteractableComponent" parent="." instance=ExtResource("2_gsj5o")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, 16.5)
+shape = SubResource("RectangleShape2D_204j0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dehsm")
+}
