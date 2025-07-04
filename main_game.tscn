@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr5p3vg7r1j8q"]
+[gd_scene load_steps=8 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dniavlm46jxve" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
 [ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://c1rq3anwdieuk" path="res://ui/pause_menu.tscn" id="7_f52ns"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -40,3 +41,7 @@ zoom = Vector2(2, 2)
 limit_left = -10000
 limit_right = 10000
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
