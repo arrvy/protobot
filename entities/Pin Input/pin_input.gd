@@ -11,7 +11,7 @@ func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interaction_type = 0
-	
+
 func on_interactable_activated() -> void:
 	interaction_type = 1
 	animation_player.play("player approach")

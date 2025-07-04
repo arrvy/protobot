@@ -4,6 +4,8 @@ extends "res://entities/base_robot.gd"
 @onready var main_game: Node2D = $".."
 @onready var iron_door_top: StaticBody2D = $"../Interactable Holder/IronDoor Top"
 
+@onready var pin_input: StaticBody2D = $"../Interactable Holder/Pin Input"
+
 
 
 
@@ -30,7 +32,8 @@ func interactable_detector():
 		1:
 			interaction_handle(iron_door_top)
 			
+			
 func interaction_handle(interaction):
 	if Input.is_action_just_pressed("interact"):
 		interaction.on_interactable_activated()
-			
+		pin_input.interactable_component.collision_mask = 1

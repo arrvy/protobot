@@ -12,11 +12,14 @@ y_sort_enabled = true
 script = ExtResource("1_1oj5k")
 
 [node name="Interactable Holder" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Pin Input" parent="Interactable Holder" instance=ExtResource("2_dugkq")]
+y_sort_enabled = true
 position = Vector2(-413, -512)
 
 [node name="IronDoor Top" parent="Interactable Holder" instance=ExtResource("3_2pltu")]
+y_sort_enabled = true
 position = Vector2(-472, -520)
 
 [node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
