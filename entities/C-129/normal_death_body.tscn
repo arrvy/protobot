@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7ij37eghe78c"]
+
+[ext_resource type="Script" uid="uid://bn2m5dgiab6qi" path="res://entities/C-129/normal_death_body.gd" id="1_gooyj"]
+[ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="1_o3ugs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gooyj"]
+size = Vector2(96, 8)
+
+[node name="normal_death_body" type="CharacterBody2D"]
+script = ExtResource("1_gooyj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o3ugs")
+region_enabled = true
+region_rect = Rect2(1458.81, 618.903, 120.459, 67.0596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 15)
+shape = SubResource("RectangleShape2D_gooyj")

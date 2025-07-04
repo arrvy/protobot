@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dniavlm46jxve"]
+[gd_scene load_steps=26 format=3 uid="uid://dniavlm46jxve"]
 
 [ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_5p2oj"]
 [ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="1_ev8ar"]
+[ext_resource type="PackedScene" uid="uid://b7ij37eghe78c" path="res://entities/C-129/normal_death_body.tscn" id="2_gweuw"]
 
 [sub_resource type="Animation" id="Animation_nshw7"]
 length = 0.001
@@ -256,6 +257,7 @@ position = Vector2(171, 168)
 collision_layer = 2
 script = ExtResource("1_5p2oj")
 move_speed = 300.0
+pushable_body_scene = ExtResource("2_gweuw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
