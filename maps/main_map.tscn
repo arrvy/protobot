@@ -9016,7 +9016,7 @@ tile_set = SubResource("TileSet_wellj")
 
 [node name="Gate" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAPn/AQAAAAAAAQAJAO3/AQAAAAAAAQAJANP/AQAAAAAAAQDi/9//AgAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAJAPn/AQAAAAAAAQAJAO3/AQAAAAAAAQAJANP/AQAAAAAAAQA=")
 tile_set = SubResource("TileSet_um3n3")
 y_sort_origin = -25
 

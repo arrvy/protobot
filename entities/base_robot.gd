@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var robot = get_node_and_resource("res://entities/C-129/c_129.gd")
 @export var move_speed: float = 100.0
 @export var starting_direction: Vector2 = Vector2.DOWN
 
@@ -23,6 +23,7 @@ func _physics_process(_delta):
 	velocity = input_vector * move_speed
 	move_and_slide()
 	pick_new_state()
+	
 
 func get_input_vector() -> Vector2:
 	return Vector2(
@@ -52,4 +53,7 @@ func suicide():
 		body.global_position = global_position
 		get_parent().add_child(body)
 	queue_free()
+	
+	
+
 	
