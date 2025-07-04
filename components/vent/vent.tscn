@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://uc8jytc3ftmd"]
+
+[ext_resource type="Script" uid="uid://bov540brpv5kk" path="res://components/vent/vent.gd" id="1_7rols"]
+[ext_resource type="Texture2D" uid="uid://d3agsudmp0ev8" path="res://assets/lab_tileset_LITE/lab_tileset_LITE.png" id="1_xd21f"]
+[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="3_djgdu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my26v"]
+size = Vector2(26, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djgdu"]
+size = Vector2(24, 69)
+
+[node name="Vent" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_7rols")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xd21f")
+region_enabled = true
+region_rect = Rect2(96.2657, 65.2062, 31.8841, 28.2869)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_my26v")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_djgdu")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_djgdu")
