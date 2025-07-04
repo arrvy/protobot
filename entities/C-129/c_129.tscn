@@ -255,7 +255,7 @@ y_sort_enabled = true
 position = Vector2(171, 168)
 collision_layer = 2
 script = ExtResource("1_5p2oj")
-move_speed = 150.0
+move_speed = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
