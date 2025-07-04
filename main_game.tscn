@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dr5p3vg7r1j8q"]
+[gd_scene load_steps=8 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dniavlm46jxve" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
 [ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://cuk88l0ed70lr" path="res://entities/Vent Top/vent_top.tscn" id="4_f52ns"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -22,20 +23,23 @@ position = Vector2(-413, -512)
 y_sort_enabled = true
 position = Vector2(-472, -520)
 
+[node name="Vent Top" parent="Interactable Holder" instance=ExtResource("4_f52ns")]
+position = Vector2(760, -497)
+
 [node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
 y_sort_enabled = true
 
 [node name="PushableObject" parent="." instance=ExtResource("3_6bm6p")]
-position = Vector2(42, 72)
+position = Vector2(40, 30)
 
 [node name="C-129" parent="." instance=ExtResource("2_yx7mw")]
-position = Vector2(-286, -382)
+position = Vector2(723, -471)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="C-129"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-286, -382)
+position = Vector2(723, -471)
 zoom = Vector2(2, 2)
 limit_left = -10000
 limit_right = 10000

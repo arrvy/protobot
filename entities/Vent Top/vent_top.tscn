@@ -1,0 +1,152 @@
+[gd_scene load_steps=15 format=3 uid="uid://cuk88l0ed70lr"]
+
+[ext_resource type="Script" uid="uid://d37sal25yqavu" path="res://entities/Vent Top/vent_top.gd" id="1_jjrg3"]
+[ext_resource type="Texture2D" uid="uid://cnkjgs01204yk" path="res://entities/Vent Top/vent top sprite.png" id="2_0vsui"]
+[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="3_hsi2d"]
+[ext_resource type="FontFile" uid="uid://c1ex11i6wcdkd" path="res://assets/fonts/PixelOperator8.ttf" id="4_mkf38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsi2d"]
+atlas = ExtResource("2_0vsui")
+region = Rect2(0, 0, 50, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkf38"]
+atlas = ExtResource("2_0vsui")
+region = Rect2(0, 30, 50, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dkv4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsi2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkf38")
+}],
+"loop": false,
+"name": &"Wreck",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfr23"]
+size = Vector2(46, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dkv4"]
+size = Vector2(20, 65)
+
+[sub_resource type="Animation" id="Animation_nelg0"]
+resource_name = "wreck"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kltve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vopg3"]
+resource_name = "player away"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0e45h"]
+resource_name = "player approach"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nayy3"]
+_data = {
+&"RESET": SubResource("Animation_kltve"),
+&"player approach": SubResource("Animation_0e45h"),
+&"player away": SubResource("Animation_vopg3"),
+&"wreck": SubResource("Animation_nelg0")
+}
+
+[node name="Vent Top" type="StaticBody2D"]
+script = ExtResource("1_jjrg3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1dkv4")
+animation = &"Wreck"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sfr23")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_hsi2d")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_1dkv4")
+debug_color = Color(0.702249, 0.432548, 0.617836, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -39.0
+offset_right = 190.0
+offset_bottom = 1.0
+scale = Vector2(1, 0.950465)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.478431)
+theme_override_constants/shadow_offset_x = 0
+theme_override_fonts/font = ExtResource("4_mkf38")
+theme_override_font_sizes/font_size = 8
+text = "click 'e'"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nayy3")
+}
+autoplay = "wreck"
