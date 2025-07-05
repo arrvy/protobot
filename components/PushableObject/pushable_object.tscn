@@ -11,10 +11,11 @@ script = ExtResource("1_2j0qy")
 push_speed = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(140.5, 46)
 shape = SubResource("RectangleShape2D_a56ga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(139.5, 39)
 texture = ExtResource("2_a56ga")
 region_enabled = true
 region_rect = Rect2(0, 7.34232, 31.9607, 26.3331)

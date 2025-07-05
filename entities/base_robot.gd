@@ -1,6 +1,5 @@
 extends CharacterBody2D
 var robot = get_node_and_resource("res://entities/C-129/c_129.gd")
-
 @export var move_speed: float = 100.0
 @export var starting_direction: Vector2 = Vector2.DOWN
 

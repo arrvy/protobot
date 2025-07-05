@@ -5,6 +5,7 @@ extends "res://entities/base_robot.gd"
 @onready var iron_door_top: StaticBody2D = $"../Interactable Holder/IronDoor Top"
 @onready var pin_input: StaticBody2D = $"../Interactable Holder/Pin Input"
 
+<<<<<<< HEAD
 @onready var vent_top: StaticBody2D = $"../Interactable Holder/Vent Top"
 
 
@@ -17,6 +18,11 @@ func _ready():
 	var cam = get_tree().root.get_node("MainGame/Camera2D") 
 	cam.set_zoom_target(Vector2(2, 2))  
 	
+=======
+
+
+
+>>>>>>> parent of 3bd1b88 (robot curut kurang vent)
 func _physics_process(delta):
 	super._physics_process(delta)
 	var dir = get_input_vector()
