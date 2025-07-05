@@ -3,8 +3,10 @@ extends Node2D
 @export var explosion_radius: float = 64.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var explosion: GPUParticles2D = $explosion
 
 func _ready() -> void:
+	explosion.emitting = true
 	audio_stream_player_2d.play()
 	anim.play("explode")
 	anim.animation_finished.connect(on_explosion_finished)

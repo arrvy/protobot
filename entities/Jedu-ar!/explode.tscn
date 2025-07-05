@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://rn65hvmqjhui"]
+[gd_scene load_steps=19 format=3 uid="uid://rn65hvmqjhui"]
 
 [ext_resource type="Script" uid="uid://dnqx5cwcxrac6" path="res://entities/Jedu-ar!/explode.gd" id="1_3wubi"]
 [ext_resource type="Texture2D" uid="uid://tpavy7vqia5o" path="res://assets/explosion-b.png" id="1_cvgu2"]
 [ext_resource type="AudioStream" uid="uid://b47x0bvf2ywsr" path="res://assets/sound/sfx/explosion.wav" id="3_2kgfi"]
+[ext_resource type="PackedScene" uid="uid://drn4s6tg1gv8w" path="res://components/explosion/explosion.tscn" id="4_egswt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wubi"]
 atlas = ExtResource("1_cvgu2")
@@ -118,3 +119,5 @@ shape = SubResource("CircleShape2D_3wubi")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2kgfi")
+
+[node name="explosion" parent="." instance=ExtResource("4_egswt")]
