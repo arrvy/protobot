@@ -117,7 +117,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mmexk"]
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_re1in")
-states/Idle/position = Vector2(407.25, 100.328)
+states/Idle/position = Vector2(407.25, 99.293)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_lj7ea")
 states/Walk/position = Vector2(598.5, 99.1172)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bollr"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_qwf2o"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_26il5")]
