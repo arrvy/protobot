@@ -5,6 +5,7 @@ extends "res://entities/base_robot.gd"
 @onready var iron_door_top: StaticBody2D = $"../Interactable Holder/IronDoor Top"
 
 @onready var pin_input: StaticBody2D = $"../Interactable Holder/Pin Input"
+@onready var vent_top: StaticBody2D = $"../Interactable Holder/Vent Top"
 
 func _ready():
 	super()
@@ -33,10 +34,12 @@ func interactable_detector():
 		0:
 			pass
 		1:
-			interaction_handle(iron_door_top)
+			interaction_handle(iron_door_top,pin_input)
+		2: 	
+			interaction_handle(vent_top,vent_top)
 			
 			
-func interaction_handle(interaction):
+func interaction_handle(interaction,emitter):
 	if Input.is_action_just_pressed("interact"):
 		interaction.on_interactable_activated()
-		pin_input.interactable_component.collision_mask = 1
+		emitter.interactable_component.collision_mask = 1

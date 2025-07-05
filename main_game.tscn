@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dr5p3vg7r1j8q"]
+[gd_scene load_steps=12 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dw200tknhveus" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
 [ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://cuk88l0ed70lr" path="res://entities/Vent Top/vent_top.tscn" id="4_f52ns"]
 [ext_resource type="PackedScene" uid="uid://fi6jc818qm7f" path="res://entities/Jedu-ar!/jedu_ar!.tscn" id="5_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://c1rq3anwdieuk" path="res://ui/pause_menu.tscn" id="7_f52ns"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="7_l5ukw"]
@@ -14,6 +15,8 @@
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_1oj5k")
+
+[node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
 
 [node name="Interactable Holder" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -26,8 +29,9 @@ position = Vector2(-413, -512)
 y_sort_enabled = true
 position = Vector2(-472, -520)
 
-[node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
+[node name="Vent Top" parent="Interactable Holder" instance=ExtResource("4_f52ns")]
 y_sort_enabled = true
+position = Vector2(760, -497)
 
 [node name="Jedu-ar!" parent="." instance=ExtResource("5_l5ukw")]
 position = Vector2(-341, -403)

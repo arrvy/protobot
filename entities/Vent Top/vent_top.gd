@@ -14,11 +14,13 @@ func on_interactable_emitter():
 	interaction_type = 2
 	input_activated.emit()
 	animation_player.play("player approach")
+	input_activated.emit()
 	
 func on_interactable_deemitter():
 	interaction_type = 0
 	input_deactivated.emit()
 	animation_player.play("player away")
+	input_deactivated.emit()
 	
 func on_interactable_activated():
 	collision_layer = 2
