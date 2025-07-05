@@ -7,10 +7,10 @@
 script = ExtResource("1_pn5rb")
 
 [node name="Preassure Plate" parent="." instance=ExtResource("2_u4ynw")]
-position = Vector2(0, 121)
+position = Vector2(0, 272)
 
 [node name="Preassure Plate2" parent="." instance=ExtResource("2_u4ynw")]
-position = Vector2(192, 119)
+position = Vector2(192, 273)
 
 [node name="Preassure Plate3" parent="." instance=ExtResource("2_u4ynw")]
 position = Vector2(193, 0)

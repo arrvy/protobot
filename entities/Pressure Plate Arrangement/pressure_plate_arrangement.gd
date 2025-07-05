@@ -21,11 +21,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	#print(sum_pressed)
+	# print(sum_pressed)
 	
 	if sum_pressed == 4:
 		print("kebuka")
 		gate_activated.emit()
+		sum_pressed = 0
+		preassure_plate.interactable_component.collision_mask = 1
+		preassure_plate_2.interactable_component.collision_mask = 1
+		preassure_plate_3.interactable_component.collision_mask = 1
+		preassure_plate_4.interactable_component.collision_mask = 1
 		
 func count_pressed1():
 	sum_pressed+=int(preassure_plate.pressed)
