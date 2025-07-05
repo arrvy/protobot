@@ -1,0 +1,226 @@
+[gd_scene load_steps=10 format=3 uid="uid://do0frd77n0hlc"]
+
+[ext_resource type="Script" uid="uid://bs86ov2caslbc" path="res://ui/pause_menu.gd" id="1_6bq7r"]
+[ext_resource type="FontFile" uid="uid://ctqlehthj7w5u" path="res://assets/fonts/FORCED SQUARE.ttf" id="2_um307"]
+[ext_resource type="Texture2D" uid="uid://bftb6prlp7b4k" path="res://ui/c-129.png" id="3_y7vhy"]
+[ext_resource type="Texture2D" uid="uid://w8mgjveb80dy" path="res://ui/jeduar.png" id="4_vlx15"]
+[ext_resource type="Texture2D" uid="uid://kss880uedeiw" path="res://ui/curut.png" id="5_dm5ad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jo5j"]
+bg_color = Color(0.815189, 0.492701, 0.544582, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnw15"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rr0j"]
+bg_color = Color(1, 1, 1, 0.207843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ems38"]
+bg_color = Color(1, 1, 1, 0.207843)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6bq7r")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -189.0
+offset_right = 318.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4jo5j")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -128.0
+offset_right = 122.5
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 30
+text = "PILIH ROBOTMU!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = -95.0
+offset_right = 219.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnw15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="robot1" type="TextureButton" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_y7vhy")
+stretch_mode = 3
+
+[node name="nama1" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rr0j")
+text = "NORMAL BOT"
+horizontal_alignment = 1
+
+[node name="skill1" type="Label" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 13
+text = "Skill: -"
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnw15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="robot2" type="TextureButton" parent="HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_vlx15")
+stretch_mode = 3
+
+[node name="nama2" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ems38")
+text = "JEDU/AR"
+horizontal_alignment = 1
+
+[node name="skill2" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 13
+text = "Skill: MELEDAQ"
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnw15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="robot3" type="TextureButton" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_dm5ad")
+stretch_mode = 3
+
+[node name="nama3" type="Label" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ems38")
+text = "CURUT"
+horizontal_alignment = 1
+
+[node name="skill3" type="Label" parent="HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 13
+text = "Skill: KECIL"
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnw15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer4"]
+layout_mode = 2
+
+[node name="robot4" type="TextureButton" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_y7vhy")
+stretch_mode = 3
+
+[node name="nama4" type="Label" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ems38")
+text = "DEMAK BOT"
+horizontal_alignment = 1
+
+[node name="skill4" type="Label" parent="HBoxContainer/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 13
+text = "Skill: MISUH"
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnw15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer5"]
+layout_mode = 2
+
+[node name="robot5" type="TextureButton" parent="HBoxContainer/PanelContainer5/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_y7vhy")
+stretch_mode = 3
+
+[node name="nama5" type="Label" parent="HBoxContainer/PanelContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ems38")
+text = "DEMAK BOT"
+horizontal_alignment = 1
+
+[node name="skill5" type="Label" parent="HBoxContainer/PanelContainer5/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_um307")
+theme_override_font_sizes/font_size = 13
+text = "Skill: MISUH"

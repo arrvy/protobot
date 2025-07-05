@@ -1,0 +1,175 @@
+[gd_scene load_steps=25 format=3 uid="uid://dr5p3vg7r1j8q"]
+
+[ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
+[ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
+[ext_resource type="PackedScene" uid="uid://bvgdnts2sp4wk" path="res://maps/main_map.tscn" id="2_ykeeq"]
+[ext_resource type="PackedScene" uid="uid://dw200tknhveus" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
+[ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://cuk88l0ed70lr" path="res://entities/Vent Top/vent_top.tscn" id="4_f52ns"]
+[ext_resource type="PackedScene" uid="uid://bq8woyc8kfgih" path="res://entities/bakuaer/bakuaer.tscn" id="5_ih6an"]
+[ext_resource type="PackedScene" uid="uid://dg04d4881s3sh" path="res://entities/door pressure plate top/door_pressure_plate_top.tscn" id="5_krmtw"]
+[ext_resource type="PackedScene" uid="uid://fi6jc818qm7f" path="res://entities/Jedu-ar!/jedu_ar!.tscn" id="5_l5ukw"]
+[ext_resource type="PackedScene" uid="uid://c1rq3anwdieuk" path="res://ui/pause_menu.tscn" id="7_f52ns"]
+[ext_resource type="PackedScene" uid="uid://caoyogjthex08" path="res://entities/Pressure Plate Arrangement/pressure_plate_arrangement.tscn" id="7_jgkyn"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="7_l5ukw"]
+[ext_resource type="PackedScene" uid="uid://s5fcobh58bvv" path="res://entities/Big Pressure Plate/big_pressure_plate.tscn" id="8_qpaub"]
+[ext_resource type="PackedScene" uid="uid://l8nblxmr56ij" path="res://entities/BreakableWall/BreakableWall.tscn" id="9_4srsv"]
+[ext_resource type="Script" uid="uid://siilhiid04vi" path="res://entities/door pressure plate top/door_big_pressure_plate.gd" id="9_an1vu"]
+[ext_resource type="PackedScene" uid="uid://5n3bj8cka6ni" path="res://entities/Curut/curut.tscn" id="13_borgi"]
+[ext_resource type="PackedScene" uid="uid://n0bj7cc151ov" path="res://ui/pilih_robot.tscn" id="15_an1vu"]
+[ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="19_umrn2"]
+[ext_resource type="PackedScene" uid="uid://cutgkc7me7gh" path="res://components/ENDING_TRIGGERED.tscn" id="20_2i4tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euc45"]
+
+[sub_resource type="Animation" id="Animation_euc45"]
+resource_name = "ENDINGGG"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Camera2D/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vn0ol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wt57k"]
+_data = {
+&"ENDINGGG": SubResource("Animation_euc45"),
+&"RESET": SubResource("Animation_vn0ol")
+}
+
+[node name="MainGame" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1oj5k")
+c129_scene = ExtResource("2_yx7mw")
+bomb_scene = ExtResource("5_l5ukw")
+curut_scene = ExtResource("13_borgi")
+bakuaer_scene = ExtResource("5_ih6an")
+
+[node name="Problem 1" type="Label" parent="."]
+offset_left = 928.0
+offset_top = -932.0
+offset_right = 1054.0
+offset_bottom = -909.0
+text = "2 atau lebih PushableObject hanya terdetect 1 saja pada
+pressure plate
+
+Maybe karena merupakan 1 scene (body nya sama)
+
+Solusinya seharusnya kita ngelakuin composition, bukan 
+inheritance (masukin collision pas di main game, bukan
+
+Kalo ga ya buat scene lain"
+
+[node name="MainMap" parent="." instance=ExtResource("2_ykeeq")]
+
+[node name="Interactable Holder" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Pin Input" parent="Interactable Holder" instance=ExtResource("2_dugkq")]
+y_sort_enabled = true
+position = Vector2(-413, -512)
+
+[node name="IronDoor Top" parent="Interactable Holder" instance=ExtResource("3_2pltu")]
+y_sort_enabled = true
+position = Vector2(-472, -520)
+
+[node name="DoorPressurePlate Top" parent="Interactable Holder" instance=ExtResource("5_krmtw")]
+position = Vector2(-415, -1192)
+
+[node name="Vent Top" parent="Interactable Holder" instance=ExtResource("4_f52ns")]
+y_sort_enabled = true
+position = Vector2(760, -497)
+
+[node name="Pressure Plate Arrangement" parent="Interactable Holder" instance=ExtResource("7_jgkyn")]
+position = Vector2(-511, -1105)
+
+[node name="BigPressurePlate" parent="Interactable Holder" instance=ExtResource("8_qpaub")]
+z_index = -1
+position = Vector2(699, -992)
+
+[node name="DoorBigPressurePlate" parent="Interactable Holder" instance=ExtResource("5_krmtw")]
+position = Vector2(716, -1191)
+script = ExtResource("9_an1vu")
+
+[node name="PushableObject" parent="." instance=ExtResource("3_6bm6p")]
+position = Vector2(146, -15)
+
+[node name="PushableObject2" parent="." instance=ExtResource("3_6bm6p")]
+position = Vector2(709, -987)
+
+[node name="BreakableWall" parent="." instance=ExtResource("9_4srsv")]
+position = Vector2(147, -999)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.6, 0.6)
+zoom = Vector2(5, 5)
+limit_left = -10000
+limit_right = 10000
+position_smoothing_enabled = true
+script = ExtResource("7_l5ukw")
+
+[node name="Label" type="Label" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = -85.0
+offset_top = -73.3333
+offset_right = 94.0
+offset_bottom = -50.3333
+text = "ENDINGGGGGGGGGGG"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PilihRobot" parent="CanvasLayer" instance=ExtResource("15_an1vu")]
+visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
+
+[node name="InteractableComponent" parent="." instance=ExtResource("19_umrn2")]
+position = Vector2(70, -24)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(70, -24)
+
+[node name="InteractableComponent2" parent="." instance=ExtResource("20_2i4tw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent2"]
+shape = SubResource("RectangleShape2D_euc45")
+
+[node name="Ending Player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wt57k")
+}

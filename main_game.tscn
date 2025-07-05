@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dr5p3vg7r1j8q"]
+[gd_scene load_steps=25 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
@@ -12,12 +12,65 @@
 [ext_resource type="PackedScene" uid="uid://fi6jc818qm7f" path="res://entities/Jedu-ar!/jedu_ar!.tscn" id="5_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://c1rq3anwdieuk" path="res://ui/pause_menu.tscn" id="7_f52ns"]
 [ext_resource type="PackedScene" uid="uid://caoyogjthex08" path="res://entities/Pressure Plate Arrangement/pressure_plate_arrangement.tscn" id="7_jgkyn"]
-[ext_resource type="Script" uid="uid://sjxh1q1c7q4j" path="res://camera_2d.gd" id="7_l5ukw"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="7_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://s5fcobh58bvv" path="res://entities/Big Pressure Plate/big_pressure_plate.tscn" id="8_qpaub"]
 [ext_resource type="PackedScene" uid="uid://l8nblxmr56ij" path="res://entities/BreakableWall/BreakableWall.tscn" id="9_4srsv"]
 [ext_resource type="Script" uid="uid://siilhiid04vi" path="res://entities/door pressure plate top/door_big_pressure_plate.gd" id="9_an1vu"]
 [ext_resource type="PackedScene" uid="uid://5n3bj8cka6ni" path="res://entities/Curut/curut.tscn" id="13_borgi"]
 [ext_resource type="PackedScene" uid="uid://n0bj7cc151ov" path="res://ui/pilih_robot.tscn" id="15_an1vu"]
+[ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="19_umrn2"]
+[ext_resource type="PackedScene" uid="uid://cutgkc7me7gh" path="res://components/ENDING_TRIGGERED.tscn" id="20_2i4tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i4tw"]
+size = Vector2(1432, 369.5)
+
+[sub_resource type="Animation" id="Animation_euc45"]
+resource_name = "ENDINGGG"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Camera2D/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vn0ol"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wt57k"]
+_data = {
+&"ENDINGGG": SubResource("Animation_euc45"),
+&"RESET": SubResource("Animation_vn0ol")
+}
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -80,7 +133,7 @@ position = Vector2(146, -15)
 position = Vector2(709, -987)
 
 [node name="BreakableWall" parent="." instance=ExtResource("9_4srsv")]
-position = Vector2(766, -785)
+position = Vector2(147, -999)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -90,6 +143,15 @@ limit_right = 10000
 position_smoothing_enabled = true
 script = ExtResource("7_l5ukw")
 
+[node name="Label" type="Label" parent="Camera2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = -85.0
+offset_top = -73.3333
+offset_right = 94.0
+offset_bottom = -50.3333
+text = "ENDINGGGGGGGGGGG"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PilihRobot" parent="CanvasLayer" instance=ExtResource("15_an1vu")]
@@ -97,5 +159,19 @@ visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
 
+[node name="InteractableComponent" parent="." instance=ExtResource("19_umrn2")]
+position = Vector2(70, -24)
+
+[node name="ENDINGTRIGGERED" parent="." instance=ExtResource("20_2i4tw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ENDINGTRIGGERED"]
+position = Vector2(165, -1416.25)
+shape = SubResource("RectangleShape2D_2i4tw")
+
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(70, -24)
+
+[node name="Ending Player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wt57k")
+}

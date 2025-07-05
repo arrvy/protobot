@@ -9,6 +9,9 @@ extends Node2D
 @onready var tilemap = $MainMap
 @onready var pin_input: StaticBody2D = $"Interactable Holder/Pin Input"
 @onready var vent_top: StaticBody2D = $"Interactable Holder/Vent Top"
+@onready var ending_triggered: Area2D = $"ENDING TRIGGERED"
+@onready var ending_player: AnimationPlayer = $"Ending Player"
+@onready var endingtriggered: EndingTriggered = $ENDINGTRIGGERED
 
 var player: Node2D
 var interaction : int
@@ -16,7 +19,7 @@ var robot_index := 0
 
 func _ready() -> void:
 	spawn_robot()
-	
+	endingtriggered.interactable_activated.connect(win)
 	pin_input.input_deactivated.connect(on_input_activated)
 	pin_input.input_activated.connect(on_input_activated)
 	vent_top.input_activated.connect(on_vent_activated)
@@ -64,3 +67,6 @@ func spawn_robot():
 func _on_robot_died(robot: Node):
 	spawn_point.global_position = robot.global_position
 	spawn_robot()
+	
+func win():
+	ending_player.play("ENDINGGG")
