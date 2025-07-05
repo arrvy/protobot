@@ -148,3 +148,6 @@ tree_root = SubResource("AnimationNodeStateMachine_mmexk")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("/root/MainGame/Camera2D")

@@ -49,6 +49,8 @@ func spawn_robot():
 	match robot_index:
 		0: scene = c129_scene
 		1: scene = bomb_scene
+		2: scene = curut_scene
+		3: scene = bakuaer_scene
 		_: 
 			print("Semua robot habis.")
 			return
