@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
 [ext_resource type="PackedScene" uid="uid://bvgdnts2sp4wk" path="res://maps/main_map.tscn" id="2_ykeeq"]
-[ext_resource type="PackedScene" uid="uid://dw200tknhveus" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://dniavlm46jxve" path="res://entities/C-129/c_129.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
 [ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
 [ext_resource type="PackedScene" uid="uid://fi6jc818qm7f" path="res://entities/Jedu-ar!/jedu_ar!.tscn" id="5_l5ukw"]
@@ -35,14 +35,6 @@ position = Vector2(-341, -403)
 [node name="PushableObject" parent="." instance=ExtResource("3_6bm6p")]
 position = Vector2(146, -15)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
-offset_left = 1.0
-offset_top = 76.0
-offset_right = 1.0
-offset_bottom = 76.0
-
 [node name="BreakableWall" parent="." instance=ExtResource("9_4srsv")]
 position = Vector2(766, -785)
 
@@ -62,3 +54,7 @@ limit_left = -10000
 limit_right = 10000
 position_smoothing_enabled = true
 script = ExtResource("7_l5ukw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
