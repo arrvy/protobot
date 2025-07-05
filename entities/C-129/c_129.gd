@@ -10,6 +10,12 @@ extends "res://entities/base_robot.gd"
 
 
 
+
+func _ready():
+	super()
+	
+	var cam = get_tree().root.get_node("MainGame/Camera2D") 
+	cam.set_zoom_target(Vector2(2, 2))  
 func _physics_process(delta):
 	super._physics_process(delta)
 	var dir = get_input_vector()
