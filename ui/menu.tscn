@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bq363gaklhrbf"]
 
-[ext_resource type="Script" path="res://ui/menu.gd" id="1_bwjgb"]
+[ext_resource type="Script" uid="uid://deydl33ff8fhv" path="res://ui/menu.gd" id="1_bwjgb"]
 [ext_resource type="Texture2D" uid="uid://dkysv24lcsn8e" path="res://ui/back.png" id="2_l8jcj"]
 [ext_resource type="FontFile" uid="uid://d3rfcsp0iyni4" path="res://assets/fonts/Bring Race.otf" id="2_udkah"]
 [ext_resource type="Texture2D" uid="uid://b0ieaxiqimk2" path="res://ui/fore.png" id="3_cp6tm"]
-[ext_resource type="Script" path="res://ui/foreground.gd" id="4_l8jcj"]
+[ext_resource type="Script" uid="uid://b0v2ce2enbh8e" path="res://ui/foreground.gd" id="4_l8jcj"]
 [ext_resource type="Texture2D" uid="uid://b7fpiwfmg2xkw" path="res://ui/aster_small.png" id="5_cop0s"]
 [ext_resource type="Texture2D" uid="uid://b1chbeuaylpaw" path="res://ui/bot.png" id="6_oumb1"]
 [ext_resource type="Texture2D" uid="uid://8ttc3iylyebs" path="res://ui/aster_big.png" id="7_7toyc"]
@@ -64,24 +64,28 @@ offset_bottom = 363.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="judul" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_udkah")
 theme_override_font_sizes/font_size = 60
 text = "Protobot"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="mulai" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Mulai"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="kredit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Kredit"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="keluar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Keluar"
+
+[connection signal="pressed" from="VBoxContainer/mulai" to="." method="_on_mulai_pressed"]
+[connection signal="pressed" from="VBoxContainer/kredit" to="." method="_on_kredit_pressed"]
+[connection signal="pressed" from="VBoxContainer/keluar" to="." method="_on_keluar_pressed"]
