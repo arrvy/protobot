@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bq8woyc8kfgih"]
+[gd_scene load_steps=23 format=3 uid="uid://bq8woyc8kfgih"]
 
 [ext_resource type="Script" uid="uid://d370tei2gvy2h" path="res://entities/bakuaer/bakuaer.gd" id="1_gcs3h"]
 [ext_resource type="Texture2D" uid="uid://bq7nhx84ambn2" path="res://assets/Robots.png" id="2_ptoid"]
@@ -212,6 +212,9 @@ states/Walk/position = Vector2(618, 99)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_o5heb"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_fi5ks"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_8dhy0")]
 graph_offset = Vector2(-46, -3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcs3h"]
+size = Vector2(24.7188, 15.3125)
+
 [node name="bakuaer" type="CharacterBody2D"]
 scale = Vector2(2, 1)
 collision_layer = 2
@@ -239,3 +242,15 @@ tree_root = SubResource("AnimationNodeStateMachine_5t1ef")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.994992, 0.021978)
 parameters/Walk/blend_position = Vector2(-0.00332373, 1.08162)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("/root/MainGame/Camera2D")
+
+[node name="PushDirection" type="Area2D" parent="."]
+linear_damp = 60.859
+angular_damp = 64.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushDirection"]
+position = Vector2(-1, 40)
+shape = SubResource("RectangleShape2D_gcs3h")
+debug_color = Color(1, 0.00676037, 0.0529761, 0.42)
