@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://yavv2ipr8b1w"]
+[gd_scene load_steps=5 format=3 uid="uid://yavv2ipr8b1w"]
 
+[ext_resource type="PackedScene" uid="uid://s5fcobh58bvv" path="res://entities/Big Pressure Plate/big_pressure_plate.tscn" id="1_b87dc"]
 [ext_resource type="PackedScene" uid="uid://b3o46kvw02244" path="res://TESTING REGION/c_130.tscn" id="1_bximo"]
 [ext_resource type="Script" uid="uid://opnprfhqfxsm" path="res://TESTING REGION/c_130.gd" id="2_b87dc"]
-[ext_resource type="PackedScene" uid="uid://caoyogjthex08" path="res://entities/Pressure Plate Arrangement/pressure_plate_arrangement.tscn" id="3_bximo"]
+[ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="2_flpte"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="BigPressurePlate" parent="." instance=ExtResource("1_b87dc")]
+position = Vector2(6, -47)
+
+[node name="PushableObject" parent="." instance=ExtResource("2_flpte")]
 
 [node name="C-130" parent="." instance=ExtResource("1_bximo")]
 script = ExtResource("2_b87dc")
@@ -13,5 +19,3 @@ pushable_body_scene = null
 
 [node name="Camera2D" type="Camera2D" parent="C-130"]
 zoom = Vector2(2, 2)
-
-[node name="Pressure Plate Arrangement" parent="." instance=ExtResource("3_bximo")]
