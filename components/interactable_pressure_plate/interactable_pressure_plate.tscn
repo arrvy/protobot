@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1lq6hqorxc4s"]
+
+[ext_resource type="Script" uid="uid://cgw737kya4tse" path="res://components/interactable_pressure_plate/interactable_pressure_plate.gd" id="1_lyaav"]
+
+[node name="InteractablePressurePlate" type="Area2D"]
+script = ExtResource("1_lyaav")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

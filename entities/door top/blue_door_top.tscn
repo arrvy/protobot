@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ddg5pejq1vfx7" path="res://assets/tiles_laboratory_LandOfPixels/tilesStuff.png" id="1_cylqm"]
 [ext_resource type="Script" uid="uid://nelno6wriu6o" path="res://entities/door top/blue_door_top.gd" id="1_yht54"]
-[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="3_xj7r1"]
+[ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="3_xj7r1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbsf8"]
 atlas = ExtResource("1_cylqm")

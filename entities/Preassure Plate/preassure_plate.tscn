@@ -1,11 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjrsgax3d18rc"]
+[gd_scene load_steps=10 format=3 uid="uid://cjrsgax3d18rc"]
 
-[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="1_rb4fg"]
+[ext_resource type="Script" uid="uid://chukf74arhfqb" path="res://entities/Preassure Plate/preassure_plate.gd" id="1_ehe23"]
+[ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="1_rb4fg"]
+[ext_resource type="Texture2D" uid="uid://daqueigp2lw8g" path="res://entities/Preassure Plate/dungeon_props.png" id="2_04tqh"]
+[ext_resource type="Script" uid="uid://cgw737kya4tse" path="res://components/interactable_pressure_plate/interactable_pressure_plate.gd" id="4_04tqh"]
+[ext_resource type="AudioStream" uid="uid://bu8w0danu11k1" path="res://entities/Preassure Plate/pressure-plate-45634.mp3" id="4_hghkx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqjlm"]
+atlas = ExtResource("2_04tqh")
+region = Rect2(416, 64, 31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu5th"]
+atlas = ExtResource("2_04tqh")
+region = Rect2(385, 64, 31, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75ya6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqjlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu5th")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu5th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqjlm")
+}],
+"loop": false,
+"name": &"unpressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehe23"]
 
 [node name="Preassure Plate" type="StaticBody2D"]
+script = ExtResource("1_ehe23")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_75ya6")
+animation = &"unpressed"
+autoplay = "unpressed"
 
-[node name="InteractableComponent" parent="." instance=ExtResource("1_rb4fg")]
+[node name="InteractablePressureTime" parent="." instance=ExtResource("1_rb4fg")]
+script = ExtResource("4_04tqh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractablePressureTime"]
+shape = SubResource("RectangleShape2D_ehe23")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_hghkx")
+
+[node name="Timer" type="Timer" parent="."]

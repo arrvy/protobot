@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ofaf0x1lmup" path="res://entities/door top/iron_door_top.tscn" id="3_2pltu"]
 [ext_resource type="PackedScene" uid="uid://dqfy7npk3l2xr" path="res://components/PushableObject/pushable_object.tscn" id="3_6bm6p"]
 [ext_resource type="PackedScene" uid="uid://c1rq3anwdieuk" path="res://ui/pause_menu.tscn" id="7_f52ns"]
-[ext_resource type="Script" uid="uid://sjxh1q1c7q4j" path="res://camera_2d.gd" id="7_l5ukw"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="7_l5ukw"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -29,6 +29,7 @@ y_sort_enabled = true
 
 [node name="C-129" parent="." instance=ExtResource("2_yx7mw")]
 position = Vector2(-376, -413)
+collision_mask = 1
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="C-129"]
 scale = Vector2(0.3, 0.3)

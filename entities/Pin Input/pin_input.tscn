@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://sq1bmu8o3dv2" path="res://entities/Pin Input/pin_input.gd" id="1_gsj5o"]
 [ext_resource type="Texture2D" uid="uid://ddg5pejq1vfx7" path="res://assets/tiles_laboratory_LandOfPixels/tilesStuff.png" id="1_ljtv0"]
-[ext_resource type="PackedScene" uid="uid://c2vfm2pm1ctwv" path="res://components/interactable_component.tscn" id="2_gsj5o"]
+[ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="2_gsj5o"]
 [ext_resource type="FontFile" uid="uid://c1ex11i6wcdkd" path="res://assets/fonts/PixelOperator8.ttf" id="3_cmei1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_204j0"]
