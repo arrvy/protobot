@@ -43,3 +43,4 @@ func interaction_handle(interaction,emitter):
 	if Input.is_action_just_pressed("interact"):
 		interaction.on_interactable_activated()
 		emitter.interactable_component.collision_mask = 1
+		

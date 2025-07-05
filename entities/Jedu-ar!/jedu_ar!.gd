@@ -14,10 +14,12 @@ func on_explosion_timeout():
 	explosion_instance.global_position = global_position
 	get_tree().current_scene.add_child(explosion_instance)
 
+	emit_signal("robot_died", self)
 	queue_free()
 	
 func handle_death_input():
 	pass
 	
 func suicide():
-	pass
+	explosion_timer.stop()
+	on_explosion_timeout()

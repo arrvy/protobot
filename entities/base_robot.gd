@@ -1,5 +1,5 @@
 extends CharacterBody2D
-var robot = get_node_and_resource("res://entities/C-129/c_129.gd")
+signal robot_died(robot_node: Node)
 
 enum robot_type {c129,jeduar,curut}
 
@@ -58,6 +58,7 @@ func suicide():
 		var body = pushable_body_scene.instantiate()
 		body.global_position = global_position
 		get_parent().add_child(body)
+	emit_signal("robot_died", self) 
 	queue_free()
 	
 	
