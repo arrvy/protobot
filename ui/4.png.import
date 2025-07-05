@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7fpiwfmg2xkw"
-path="res://.godot/imported/aster_small.png-3adeadb34275819f42c3c92fdf2c971e.ctex"
+uid="uid://cvp7x3jaammid"
+path="res://.godot/imported/4.png-89527cce04e1df1564f8beac8ddf1857.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/aster_small.png"
-dest_files=["res://.godot/imported/aster_small.png-3adeadb34275819f42c3c92fdf2c971e.ctex"]
+source_file="res://ui/4.png"
+dest_files=["res://.godot/imported/4.png-89527cce04e1df1564f8beac8ddf1857.ctex"]
 
 [params]
 
