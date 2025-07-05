@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://5n3bj8cka6ni"]
 
 [ext_resource type="Script" uid="uid://drwcom5th2k25" path="res://entities/Curut/curut.gd" id="1_81xak"]
-[ext_resource type="Texture2D" path="res://assets/robots/Robots.png" id="2_sguoc"]
+[ext_resource type="Texture2D" uid="uid://bq7nhx84ambn2" path="res://assets/Robots.png" id="2_sguoc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3cdq"]
 radius = 2.0
