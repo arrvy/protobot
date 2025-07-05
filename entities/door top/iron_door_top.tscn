@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ofaf0x1lmup"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ofaf0x1lmup"]
 
 [ext_resource type="Script" uid="uid://bhop3dge6yi8v" path="res://entities/door top/iron_door_top.gd" id="1_105yj"]
 [ext_resource type="Texture2D" uid="uid://dw1xh8qwhfrs6" path="res://entities/door top/IronDoor Top.png" id="2_jnlsw"]
+[ext_resource type="AudioStream" uid="uid://bsfjy40yemjt" path="res://assets/sound/sfx/gate.wav" id="3_105yj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ekkl"]
 atlas = ExtResource("2_jnlsw")
@@ -57,3 +58,7 @@ animation = &"open"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_uiqqr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_105yj")
+pitch_scale = 1.3

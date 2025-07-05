@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg04d4881s3sh"]
+[gd_scene load_steps=10 format=3 uid="uid://dg04d4881s3sh"]
 
 [ext_resource type="Script" uid="uid://g2axpewxsewo" path="res://entities/door pressure plate top/door_pressure_plate_top.gd" id="1_y03en"]
 [ext_resource type="Texture2D" uid="uid://ddg5pejq1vfx7" path="res://assets/tiles_laboratory_LandOfPixels/tilesStuff.png" id="2_x61n7"]
 [ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="3_11ken"]
+[ext_resource type="AudioStream" uid="uid://bsfjy40yemjt" path="res://assets/sound/sfx/gate.wav" id="4_l26wn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbsf8"]
 atlas = ExtResource("2_x61n7")
@@ -62,3 +63,6 @@ shape = SubResource("RectangleShape2D_cylqm")
 position = Vector2(-5, 10.5)
 shape = SubResource("RectangleShape2D_mc0nv")
 debug_color = Color(0.318555, 0.55125, 0.793183, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_l26wn")
