@@ -1,8 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dw200tknhveus"]
+[gd_scene load_steps=27 format=3 uid="uid://dw200tknhveus"]
 
 [ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_ql00t"]
 [ext_resource type="PackedScene" uid="uid://b7ij37eghe78c" path="res://entities/C-129/normal_death_body.tscn" id="2_y8sx8"]
 [ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="3_fv06t"]
+[ext_resource type="AudioStream" uid="uid://y6rhdfoeieph" path="res://assets/sound/sfx/wwd.mp3juice.blog - Conveyor Belt Running Loop (Conveyor Belt Sound Effect) (320 KBps).wav" id="4_nshw7"]
 
 [sub_resource type="Animation" id="Animation_nshw7"]
 length = 0.001
@@ -25,6 +26,18 @@ tracks/1/path = NodePath("Sprite2D:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -151,6 +164,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_l2gqk"]
 resource_name = "walk_right"
@@ -179,6 +204,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rexnb"]
@@ -288,3 +325,7 @@ angular_damp = 64.8
 position = Vector2(-1, 40)
 shape = SubResource("RectangleShape2D_5p2oj")
 debug_color = Color(1, 0.00676037, 0.0529761, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nshw7")
+volume_db = 0.9
