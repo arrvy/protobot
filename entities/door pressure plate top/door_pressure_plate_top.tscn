@@ -38,7 +38,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cylqm"]
-size = Vector2(172, 22)
+size = Vector2(172, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc0nv"]
 size = Vector2(202, 87)
@@ -53,7 +53,7 @@ animation = &"open_door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(-5, -19)
+position = Vector2(-5, 20.5)
 shape = SubResource("RectangleShape2D_cylqm")
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_11ken")]

@@ -45,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqqr"]
-size = Vector2(76, 10)
+size = Vector2(76, 40)
 
 [node name="IronDoor Top" type="StaticBody2D"]
 script = ExtResource("1_105yj")
@@ -55,5 +55,5 @@ sprite_frames = SubResource("SpriteFrames_utf78")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_uiqqr")
