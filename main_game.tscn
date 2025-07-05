@@ -1,3 +1,4 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
