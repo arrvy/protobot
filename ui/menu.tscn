@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq363gaklhrbf"]
+[gd_scene load_steps=13 format=3 uid="uid://bq363gaklhrbf"]
 
 [ext_resource type="Script" uid="uid://deydl33ff8fhv" path="res://ui/menu.gd" id="1_bwjgb"]
 [ext_resource type="Texture2D" uid="uid://dkysv24lcsn8e" path="res://ui/back.png" id="2_l8jcj"]
@@ -8,7 +8,30 @@
 [ext_resource type="Texture2D" uid="uid://b7fpiwfmg2xkw" path="res://ui/aster_small.png" id="5_cop0s"]
 [ext_resource type="Texture2D" uid="uid://b1chbeuaylpaw" path="res://ui/bot.png" id="6_oumb1"]
 [ext_resource type="Texture2D" uid="uid://8ttc3iylyebs" path="res://ui/aster_big.png" id="7_7toyc"]
-[ext_resource type="FontFile" uid="uid://yaka5k13qt4f" path="res://assets/fonts/Xirod.otf" id="9_cp6tm"]
+[ext_resource type="FontFile" uid="uid://ctqlehthj7w5u" path="res://assets/fonts/FORCED SQUARE.ttf" id="9_cp6tm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fd1n"]
+draw_center = false
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cop0s"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oumb1"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -40,7 +63,7 @@ texture = ExtResource("5_cop0s")
 
 [node name="bot" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(15, 50)
+position = Vector2(117.4, 68.8)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("6_oumb1")
 flip_h = true
@@ -58,10 +81,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -628.0
-offset_top = 131.0
-offset_right = -111.0
-offset_bottom = 363.0
+offset_left = -242.0
+offset_top = -128.0
+offset_right = 275.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -75,19 +98,22 @@ horizontal_alignment = 1
 [node name="mulai" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_cp6tm")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fd1n")
 text = "Mulai"
 
 [node name="kredit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_cp6tm")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_cop0s")
 text = "Kredit"
 
 [node name="keluar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_cp6tm")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_oumb1")
 text = "Keluar"
 
 [connection signal="pressed" from="VBoxContainer/mulai" to="." method="_on_mulai_pressed"]
