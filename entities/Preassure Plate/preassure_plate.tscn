@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://njevtuecfnn6" path="res://components/interactable_component.tscn" id="1_rb4fg"]
 [ext_resource type="Texture2D" uid="uid://daqueigp2lw8g" path="res://entities/Preassure Plate/dungeon_props.png" id="2_04tqh"]
 [ext_resource type="Script" uid="uid://cgw737kya4tse" path="res://components/interactable_pressure_plate/interactable_pressure_plate.gd" id="4_04tqh"]
-[ext_resource type="AudioStream" uid="uid://bu8w0danu11k1" path="res://entities/Preassure Plate/pressure-plate-45634.mp3" id="4_hghkx"]
+[ext_resource type="AudioStream" uid="uid://dthxksohntvym" path="res://entities/Preassure Plate/pressure-plate-45634.mp3" id="4_hghkx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lqjlm"]
 atlas = ExtResource("2_04tqh")

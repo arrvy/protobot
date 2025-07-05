@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dniavlm46jxve"]
+[gd_scene load_steps=26 format=3 uid="uid://dw200tknhveus"]
 
-[ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_5p2oj"]
-[ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="1_ev8ar"]
-[ext_resource type="PackedScene" uid="uid://b7ij37eghe78c" path="res://entities/C-129/normal_death_body.tscn" id="2_gweuw"]
+[ext_resource type="Script" uid="uid://dg7vm2lp2xx8b" path="res://entities/C-129/c_129.gd" id="1_ql00t"]
+[ext_resource type="PackedScene" uid="uid://b7ij37eghe78c" path="res://entities/C-129/normal_death_body.tscn" id="2_y8sx8"]
+[ext_resource type="Texture2D" uid="uid://d3ga0e3qwkvqe" path="res://assets/robots/2D Pixel Art Military Incursion Bot Sprites/Military Incursion Bot Sprite Sheet.png" id="3_fv06t"]
 
 [sub_resource type="Animation" id="Animation_nshw7"]
 length = 0.001
@@ -255,13 +255,13 @@ size = Vector2(24.7188, 15.3125)
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_5p2oj")
+script = ExtResource("1_ql00t")
 move_speed = 300.0
-pushable_body_scene = ExtResource("2_gweuw")
+pushable_body_scene = ExtResource("2_y8sx8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
-texture = ExtResource("1_ev8ar")
+texture = ExtResource("3_fv06t")
 hframes = 10
 vframes = 8
 
