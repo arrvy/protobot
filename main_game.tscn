@@ -60,6 +60,7 @@ script = ExtResource("7_l5ukw")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
+<<<<<<< Updated upstream
 offset_left = 1.0
 offset_top = 76.0
 offset_right = 1.0
@@ -67,3 +68,10 @@ offset_bottom = 76.0
 
 [node name="BreakableWall" parent="." instance=ExtResource("9_4srsv")]
 position = Vector2(766, -785)
+=======
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+>>>>>>> Stashed changes
