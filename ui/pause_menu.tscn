@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1rq3anwdieuk"]
+[gd_scene load_steps=11 format=3 uid="uid://c1rq3anwdieuk"]
 
 [ext_resource type="Shader" uid="uid://cvika8kl7jgnb" path="res://ui/pause.gdshader" id="1_50142"]
 [ext_resource type="Script" uid="uid://bs86ov2caslbc" path="res://ui/pause_menu.gd" id="1_ejwgg"]
+[ext_resource type="FontFile" uid="uid://yaka5k13qt4f" path="res://assets/fonts/Xirod.otf" id="3_fob5h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ejwgg"]
 shader = ExtResource("1_50142")
@@ -131,6 +132,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fob5h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_ejwgg")
 text = "Lanjutkan Game"
@@ -139,6 +141,7 @@ text = "Lanjutkan Game"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_fob5h")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_fob5h")
 text = "Menu Utama"
