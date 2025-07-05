@@ -7,6 +7,10 @@ const PRESSURE_PLATE_45634 = preload("res://entities/Preassure Plate/pressure-pl
 @onready var delay_timer: Timer = $Timer
 @onready var interactable_component: InteractablePressurePlate = $InteractablePressureTime
 var is_pressed: bool
+var pressed: int
+
+signal plate_activated
+signal plate_deactivated
 
 func _ready() -> void:
 	is_pressed = false
@@ -16,7 +20,7 @@ func _ready() -> void:
 	interactable_component.interactable_deactivated.connect(preassure_deactivated)
 	delay_timer.timeout.connect(_on_delay_timeout)
 	delay_timer.one_shot = true
-	delay_timer.wait_time = 1.5 # ubah sesuai kebutuhan (delay sebelum unpressed)
+	delay_timer.wait_time = 5 # ubah sesuai kebutuhan (delay sebelum unpressed)
 
 func preassure_activated():
 	print(is_pressed)
@@ -29,6 +33,8 @@ func preassure_activated():
 	animated_sprite_2d.play("pressed")
 	audio_stream_player_2d.pitch_scale = randf() + 0.5
 	audio_stream_player_2d.play()
+	pressed = 1
+	plate_activated.emit()
 
 func preassure_deactivated():
 	
@@ -37,6 +43,12 @@ func preassure_deactivated():
 func _on_delay_timeout():
 	#if not is_pressed: # pastikan tidak ada yang injak lagi
 		is_pressed = false
+		pressed = -1
+		plate_deactivated.emit()
+		print("unpressed")
 		animated_sprite_2d.play("unpressed")
 		audio_stream_player_2d.pitch_scale = randf()
 		audio_stream_player_2d.play()
+		
+		
+		

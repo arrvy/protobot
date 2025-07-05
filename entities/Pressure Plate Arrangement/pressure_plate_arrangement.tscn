@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://caoyogjthex08"]
+[gd_scene load_steps=3 format=3 uid="uid://caoyogjthex08"]
+
+[ext_resource type="Script" uid="uid://c57fau4swrjhu" path="res://entities/Pressure Plate Arrangement/pressure_plate_arrangement.gd" id="1_pn5rb"]
+[ext_resource type="PackedScene" uid="uid://cjrsgax3d18rc" path="res://entities/Preassure Plate/preassure_plate.tscn" id="2_u4ynw"]
 
 [node name="Pressure Plate Arrangement" type="Node2D"]
+script = ExtResource("1_pn5rb")
+
+[node name="Preassure Plate" parent="." instance=ExtResource("2_u4ynw")]
+position = Vector2(0, 121)
+
+[node name="Preassure Plate2" parent="." instance=ExtResource("2_u4ynw")]
+position = Vector2(192, 119)
+
+[node name="Preassure Plate3" parent="." instance=ExtResource("2_u4ynw")]
+position = Vector2(193, 0)
+
+[node name="Preassure Plate4" parent="." instance=ExtResource("2_u4ynw")]
