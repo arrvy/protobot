@@ -1,6 +1,8 @@
 extends CharacterBody2D
 var robot = get_node_and_resource("res://entities/C-129/c_129.gd")
 
+enum robot_type {c129,jeduar,curut}
+
 @export var move_speed: float = 100.0
 @export var starting_direction: Vector2 = Vector2.DOWN
 
@@ -9,6 +11,8 @@ var robot = get_node_and_resource("res://entities/C-129/c_129.gd")
 
 @export var pushable_body_scene: PackedScene
 var is_alive: bool = true
+var chance: int = 2
+
 
 func _ready():
 	update_animation_parameters(starting_direction)
@@ -46,6 +50,7 @@ func pick_new_state():
 func handle_death_input():
 	if Input.is_action_just_pressed("die"):
 		suicide()
+		
 		
 func suicide():
 	is_alive = false

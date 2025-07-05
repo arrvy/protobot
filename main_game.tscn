@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr5p3vg7r1j8q"]
+[gd_scene load_steps=17 format=3 uid="uid://dr5p3vg7r1j8q"]
 
 [ext_resource type="Script" uid="uid://bpka5sxlcib24" path="res://main_game.gd" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://dvaii4ntc8gll" path="res://entities/Pin Input/pin_input.tscn" id="2_dugkq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://s5fcobh58bvv" path="res://entities/Big Pressure Plate/big_pressure_plate.tscn" id="8_qpaub"]
 [ext_resource type="PackedScene" uid="uid://l8nblxmr56ij" path="res://entities/BreakableWall/BreakableWall.tscn" id="9_4srsv"]
 [ext_resource type="Script" uid="uid://siilhiid04vi" path="res://entities/door pressure plate top/door_big_pressure_plate.gd" id="9_an1vu"]
+[ext_resource type="PackedScene" uid="uid://n0bj7cc151ov" path="res://ui/pilih_robot.tscn" id="15_an1vu"]
 
 [node name="MainGame" type="Node2D"]
 y_sort_enabled = true
@@ -95,5 +96,8 @@ position_smoothing_enabled = true
 script = ExtResource("7_l5ukw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PilihRobot" parent="CanvasLayer" instance=ExtResource("15_an1vu")]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_f52ns")]
